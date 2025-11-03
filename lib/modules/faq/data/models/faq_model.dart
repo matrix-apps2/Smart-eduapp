@@ -1,0 +1,11 @@
+class FaqModel {
+  int? id;
+  String? question;
+  String? answer;
+  FaqModel({this.id, this.question, this.answer});
+  FaqModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    question = json['question'];
+    answer = json['answer'];
+  }
+}
