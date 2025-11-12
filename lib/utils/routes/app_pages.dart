@@ -28,8 +28,15 @@ import '../../modules/auth/presentation/pages/preferences.dart';
 import '../../modules/auth/presentation/pages/successful_screen.dart';
 import '../../modules/chat/presentation/pages/add_chat_view.dart';
 import '../../modules/chat/presentation/pages/chat_screen.dart';
+import '../../modules/contact_us/presentation/contact_us_screen.dart';
+import '../../modules/guest/blogs/pages/blog_details_screen.dart';
 import '../../modules/guest/home/pages/request_free_consultant.dart';
+import '../../modules/guest/more/pages/about_us_screen.dart';
+import '../../modules/guest/more/pages/terms_and_conditions_screen.dart';
 import '../../modules/guest/portoflio/pages/portfolio_screen.dart';
+import '../../modules/guest/portoflio/pages/work_title_screen.dart';
+import '../../modules/guest/services/pages/service_details_screen.dart';
+import '../../modules/guest/services/pages/service_request_screen.dart';
 import '../../modules/guest/services/pages/services_screen.dart';
 import '../../modules/onboarding/presentation/onboarding_screen.dart';
 import '../../modules/rating/presentation/pages/raring_overview_screen.dart';
@@ -94,7 +101,14 @@ class AppPages {
     if (path == Routes.ratingOverviewScreen) page = RatingOverviewScreen();
     if (path == Routes.requestFreeConsultant) page = RequestFreeConsultant();
     if (path == Routes.servicesScreen) page = ServicesScreen();
+    if (path == Routes.serviceDetailsScreen) page = ServiceDetailsScreen();
+    if (path == Routes.serviceRequestScreen) page = ServiceRequestScreen();
     if (path == Routes.portfolioScreen) page = PortfolioScreen();
+    if (path == Routes.workTitleScreen) page = WorkTitleScreen();
+    if (path == Routes.blogDetailsScreen) page = BlogDetailsScreen();
+    if (path == Routes.aboutUsScreen) page = AboutUsScreen();
+    if (path == Routes.contactUsScreen) page = ContactUsScreen();
+    if (path == Routes.termsAndConditionsScreen) page = TermsAndConditionsScreen();
 
     //package & invoice
     if (path == Routes.packages) page = const PackagesScreen();

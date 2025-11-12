@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:smart_operation/awesome_extension_package/awesome_extensions.dart';
 
 import '../../../../core/presentation/widgets/component/custom_app_bar.dart';
@@ -37,6 +38,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> with SingleTickerProv
     super.initState();
   }
 
+  @override
   void dispose() {
     _tabController.dispose();
     super.dispose();
@@ -47,6 +49,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> with SingleTickerProv
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Portfolio',
+        isBackButtonExist: false,
         // onBackPress: ()=> AppNavigation.goBack(),
         // rightIcon: Image.asset(AppImagePath.searchIcon),
       ),
@@ -113,25 +116,22 @@ class _PortfolioScreenState extends State<PortfolioScreen> with SingleTickerProv
               child: TabBarView(
                 controller: _tabController,
                 children: tabs.map((_) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-                    child: GridView.builder(
-                      itemCount: PortoflioList.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 16.h,
-                        crossAxisSpacing: 16.w,
-                        childAspectRatio: 0.9,
-                      ),
-                      itemBuilder: (context, index) {
-                        final Portoflio = PortoflioList[index];
-                        return PortoflioCard(
-                          title: Portoflio["title"]!,
-                          image: Portoflio["image"]!,
-                        );
-                      },
+                  return MasonryGridView.builder(
+                    itemCount: PortoflioList.length,
+                    gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
                     ),
-                  );
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
+                    padding: EdgeInsets.only(top: 12.h),
+                    itemBuilder: (context, index) {
+                      final portofolio = PortoflioList[index];
+                      return PortoflioCard(
+                        title: portofolio["title"]!,
+                        image: portofolio["image"]!,
+                      );
+                    },
+                  ).paddingSymmetric(horizontal: 16.w);
                 }).toList(),
               ),
             ),

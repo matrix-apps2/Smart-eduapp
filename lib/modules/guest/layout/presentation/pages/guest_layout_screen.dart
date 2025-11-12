@@ -18,6 +18,9 @@ import '../../../../../utils/routes/navigation_services.dart';
 import '../../../../../utils/theme/app_colors.dart';
 import '../../../../../utils/translations/strings.dart';
 import '../../../../../widgets/app_snackbar.dart';
+import '../../../../more/more_screen.dart';
+import '../../../blogs/pages/blogs_screen.dart';
+import '../../../more/pages/more_screen.dart';
 import '../../../portoflio/pages/portfolio_screen.dart';
 import '../../../services/pages/services_screen.dart';
 
@@ -146,6 +149,8 @@ class _LayoutViewState extends State<LayoutView> {
                       GuestHomeScreen(),
                       ServicesScreen(),
                       PortfolioScreen(),
+                      BlogsScreen(),
+                      GuestMoreScreen(),
                     ],
                   ),
                   onWillPop: () async {

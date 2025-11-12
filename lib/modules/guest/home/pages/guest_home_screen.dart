@@ -4,15 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_operation/awesome_extension_package/awesome_extensions.dart';
 import 'package:smart_operation/core/presentation/widgets/component/component.dart';
-import 'package:smart_operation/modules/guest/data/model/core_service_model.dart';
+import 'package:smart_operation/modules/guest/home/data/model/core_service_model.dart';
 import 'package:smart_operation/utils/routes/app_routes.dart';
 import 'package:smart_operation/utils/routes/navigation_services.dart';
 import 'package:smart_operation/utils/theme/appColors.dart';
 import 'package:smart_operation/utils/theme/appImages.dart';
 
 import '../../../../core/presentation/widgets/app_text.dart';
-import '../../data/model/client_testimonial_model.dart';
-import '../../data/model/qualifications_model.dart';
+import '../data/model/client_testimonial_model.dart';
+import '../data/model/qualifications_model.dart';
 import '../widget/qualification_card_widget.dart';
 
 class GuestHomeScreen extends StatelessWidget {
@@ -131,7 +131,9 @@ class GuestHomeScreen extends StatelessWidget {
                                           Spacer(),
                                           AppText('We offer professional research and academic writing services.', size: 11.sp),
                                           8.heightBox,
-                                          AppButton(onTap: (){},
+                                          AppButton(onTap: (){
+                                              AppNavigation.toNamed(Routes.requestFreeConsultant);
+                                          },
                                             color: AppCustomColors.colorLightBlue5,
                                             textColor: Colors.black,
                                             fontWeight: FontWeight.w700,
@@ -350,9 +352,9 @@ class GuestHomeScreen extends StatelessWidget {
                     SizedBox(height: 16.h),
 
                     /// --- Button ---
-                    InkWell(
-                      borderRadius: BorderRadius.circular(12.r),
-                      onTap: (){
+                    TapEffect(
+                      // borderRadius: BorderRadius.circular(12.r),
+                      onClick: (){
                         AppNavigation.toNamed(Routes.requestFreeConsultant);
                       },
                       child: Container(

@@ -29,6 +29,13 @@ class Routes {
   static const String requestFreeConsultant = '/requestFreeConsultant';
   static const String servicesScreen = '/servicesScreen';
   static const String portfolioScreen = '/portfolioScreen';
+  static const String workTitleScreen = '/workTitleScreen';
+  static const String serviceDetailsScreen = '/serviceDetailsScreen';
+  static const String serviceRequestScreen = '/serviceRequestScreen';
+  static const String blogDetailsScreen = '/blogDetailsScreen';
+  static const String aboutUsScreen = '/aboutUsScreen';
+  static const String contactUsScreen = '/contactUsScreen';
+  static const String termsAndConditionsScreen = '/termsAndConditionsScreen';
 
   static const String faq = '/faq';
   static const String about = '/about';

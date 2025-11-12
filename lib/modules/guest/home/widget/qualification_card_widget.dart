@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../data/model/client_testimonial_model.dart';
+import '../data/model/client_testimonial_model.dart';
 
 
 class QualificationCardWidget extends StatelessWidget {

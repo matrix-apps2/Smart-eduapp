@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_operation/core/presentation/widgets/component/animation/tap_effect.dart';
+import 'package:smart_operation/utils/routes/app_routes.dart';
+import 'package:smart_operation/utils/routes/navigation_services.dart';
+
+import '../../../../utils/theme/appColors.dart';
 
 class PortoflioCard extends StatelessWidget {
   final String title;
@@ -10,48 +15,54 @@ class PortoflioCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 6,
-            spreadRadius: 1,
-            offset: const Offset(0, 2),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          /// الصورة
-          ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(16.r),bottom: Radius.circular(16.r)),
-            child: Image.asset(
-              image,
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: 120.h,
+    return TapEffect(
+      onClick: (){
+        AppNavigation.toNamed(Routes.workTitleScreen);
+      },
+      child: Container(
+        padding: EdgeInsets.all(4),
+        decoration: BoxDecoration(
+          color: AppCustomColors.colorGrey5,
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 6,
+              spreadRadius: 1,
+              offset: const Offset(0, 2),
             ),
-          ),
-
-          /// النص
-          Padding(
-            padding: EdgeInsets.all(8.w),
-            child: Text(
-              title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            /// الصورة
+            ClipRRect(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16.r),bottom: Radius.circular(16.r)),
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: 156.h,
               ),
             ),
-          ),
-        ],
+
+            /// النص
+            Padding(
+              padding: EdgeInsets.all(8.w),
+              child: Text(
+                title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black87,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

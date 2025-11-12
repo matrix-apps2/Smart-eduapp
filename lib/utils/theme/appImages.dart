@@ -56,6 +56,8 @@ class AppImagePath {
   static const String support = "assets/images/support.png";
   static const String supportServeice = "assets/images/supportServeice.png";
   static const String serviceImg = "assets/images/service-img.png";
+  static const String blogImg = "assets/images/blog-img.png";
+  static const String blogsEmpty = "assets/images/blogs-empty.png";
   static const String upload = "assets/images/upload.png";
   static const String weightCalcu = "assets/images/weightCalcu.png";
   static const String whatsApp = "assets/images/whatsApp.png";
@@ -111,6 +113,7 @@ class AppIcons {
   static const String addProduct = "$_iconsPath/add_product.svg";
   static const String copy = "$_iconsPath/copy.svg";
   static const String arrow = "$_iconsPath/arrow.svg";
+  static const String rightMark = "$_iconsPath/right-mark.svg";
   static const String rightArrow = "$_iconsPath/right_arrow.svg";
   static const String account = "$_iconsPath/account.svg";
   static const String subscriptions = "$_iconsPath/subscriptions.svg";

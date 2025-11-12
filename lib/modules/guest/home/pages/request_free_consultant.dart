@@ -59,8 +59,8 @@ class _RequestFreeConsultantState extends State<RequestFreeConsultant> {
                   ).paddingOnly(top: 24.h, bottom: 8.h),
                   EditText(
                     hint: 'Enter full name here...',
-                    type: TextInputType.emailAddress,
-                    controller: _emailController,
+                    type: TextInputType.text,
+                    controller: _fullNameController,
                     // validateFunc: _validateEmail,
                     // prefixImage: SvgPicture.asset(AppIcons.email, colorFilter: ColorFilter.mode(AppCustomColors.appSubText, BlendMode.srcIn)),
                   ),
@@ -134,7 +134,7 @@ class _RequestFreeConsultantState extends State<RequestFreeConsultant> {
                             value: "op2", child: Text("Level 2").tr()),
                       ],
                       onChanged: (value) {
-                        print('valueeeeeeee: ${value}');
+                        print('value: ${value}');
                       },
                     ),
                   ),
